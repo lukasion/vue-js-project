@@ -5,10 +5,16 @@
     width="100%"
   >
     <v-card-title class="text-h4 font-weight-bold">
-      Main Content Area
+      {{ $t('settings') }}
     </v-card-title>
+
     <v-card-text>
-      This area takes up the remaining space beside the sidebar.
+      <v-card
+        class="pa-8 border rounded-xl"
+        elevation="0"
+      >
+        test
+      </v-card>
     </v-card-text>
   </v-card>
 </template>

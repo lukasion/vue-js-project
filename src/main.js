@@ -17,6 +17,7 @@ import '@fontsource/poppins/900.css'
 import { router } from "@/router";
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
+import i18n from './i18n'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -36,5 +37,6 @@ const vuetify = createVuetify({
 createApp(App)
     .use(pinia)
     .use(vuetify)
+    .use(i18n)
     .use(router)
     .mount('#app')

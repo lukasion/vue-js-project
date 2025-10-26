@@ -3,47 +3,8 @@
     class="border-e-0"
     permanent
   >
-    <v-card
-      class="border ma-4 pa-2 rounded-lg pl-4 pr-4 flex items-center"
-      elevation="0"
-    >
-      <svg
-        width="32px"
-        class="rounded-xl"
-        xmlns="http://www.w3.org/2000/svg"
-        xml:space="preserve"
-        viewBox="0 0 264.58 264.58"
-      ><path
-        fill="#e6e6e6"
-        d="M0 0h264.58v264.58H0z"
-      /><path
-        fill="#bbb"
-        d="M132.56 17.92c-2.8-.12-5.62.06-8.4.56l-1.84.33a434.63 434.63 0 0 0-17.99 3.58 27.06 27.06 0 0 0-13.27 7.33l-2.1 2.1a206.9 206.9 0 0 0-12.6 13.7 74.7 74.7 0 0 0-7.92 11.43 24.6 24.6 0 0 0-3.03 11.65v.55c-.1 3.8.22 7.6.98 11.31a70.95 70.95 0 0 1 1.46 9.22l.14 1.55c.38 4.13.84 8.26 1.37 12.38l.05.4c.73 3.04.64 6.22-.25 9.2a9.04 9.04 0 0 0-.5 5.4l2.16 10.05c1.22 5.91 2.55 11.8 4 17.65a12.63 12.63 0 0 0 3.67 6.87c1.62 1.34 2.94 3 3.89 4.87l.44.87c1.26 2.48 2.45 4.98 3.6 7.5l3.19 7.04a26.37 26.37 0 0 1 2.8 18.06c-1.15 4-5.01 8.91-8.63 10.96a2178.71 2178.71 0 0 1-37.49 20.85c-15.34 8.3-32.72 22.03-46.29 37.79v3.46h264.58v-23.43a62.44 62.44 0 0 0-19.08-14.26l-18.44-8.83a458.3 458.3 0 0 0-41.86-18.9 16.15 16.15 0 0 1-11.35-10.83 14.55 14.55 0 0 1 .22-10.43 22.76 22.76 0 0 0 2.54-6.6l1.19-5.6a15.63 15.63 0 0 1 5.86-11.36 11.2 11.2 0 0 0 5.2-6.58l.52-1.79c1.2-4.08 2.27-8.2 3.23-12.35l1.63-7.06a16.12 16.12 0 0 0 .87-15.5 6.7 6.7 0 0 1-1.9-5.33l.3-3.3c.4-4.25.98-8.5 1.75-12.71l.85-4.6a32.6 32.6 0 0 0-.08-16.83 63.47 63.47 0 0 0-5.29-11.27l-1.26-2.12a675.8 675.8 0 0 1-8.15-14.06 26.42 26.42 0 0 0-9.57-10 71.6 71.6 0 0 0-12.31-5.7l-1.94-.69a245.8 245.8 0 0 0-16.63-5.22 37.82 37.82 0 0 0-8.32-1.3z"
-      />
-      </svg>
-      Witaj, <strong>Gość</strong>
-    </v-card>
-
-    <v-list nav>
-      <v-list-item
-        prepend-icon="mdi-account-multiple"
-        title="Pracownicy"
-        value="employees"
-        class="text-3xl"
-      />
-
-      <v-list-item
-        prepend-icon="mdi-briefcase-account"
-        title="Delegacje"
-        value="delegations"
-      />
-
-      <v-list-item
-        prepend-icon="mdi-car-back"
-        title="Pojazdy"
-        value="vehicles"
-      />
-    </v-list>
+    <navigation-avatar />
+    <navigation-list />
 
     <template #append>
       <v-list
@@ -52,7 +13,7 @@
       >
         <v-list-item
           prepend-icon="mdi-cog-outline"
-          title="Ustawienia"
+          :title="$t('settings')"
           value="settings"
         />
       </v-list>
@@ -61,15 +22,24 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-facing-decorator'
+import { Vue, Component, toNative } from 'vue-facing-decorator'
 import { State } from "@/utils/PiniaDecorators"
 import { useSettingsStore } from "@/stores/settings.store"
+import NavigationAvatar from "@/components/NavigationAvatar.vue"
+import NavigationList from "@/components/NavigationList.vue"
 
-@Component
-export default class Settings extends Vue {
+@Component({
+  components: {
+    NavigationAvatar, NavigationList
+  }
+})
+export class Settings extends Vue {
   @State(useSettingsStore)
   companyName: string
 }
+let component = Settings;
+(function () { component = toNative(component) })()
+export default component
 </script>
 
 <style scoped>
