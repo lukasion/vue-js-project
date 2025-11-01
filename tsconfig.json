@@ -1,14 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ESNext",
     "module": "ESNext",
-    "lib": ["ES2015", "DOM"],
+    "moduleResolution": "bundler", 
+    "lib": ["ESNext", "DOM"],
+    "jsx": "preserve",
+    "useDefineForClassFields": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vitest/globals"]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "tests/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

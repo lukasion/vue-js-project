@@ -17,7 +17,6 @@
     "eslint-plugin-vitest": "^0.5.4",
     "pinia": "^3.0.3",
     "pinia-plugin-persistedstate": "^4.5.0",
-    "vue": "^3.5.22",
     "vue-eslint-parser": "^10.2.0",
     "vue-facing-decorator": "^4.0.1",
     "vue-i18n": "^11.1.12",
@@ -41,6 +40,7 @@
     "typescript-eslint": "^8.46.1",
     "vite": "^7.1.7",
     "vite-plugin-vue-devtools": "^8.0.2",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.6",
+    "vue": "^3.5.22"
   }
 }
