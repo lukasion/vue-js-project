@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "target": "ES2017",
+    "module": "ESNext",
+    "lib": ["ES2015", "DOM"],
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"]
