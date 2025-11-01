@@ -2,9 +2,10 @@
   <v-list nav>
     <v-list-item
       prepend-icon="mdi-account-multiple"
-      :title="$t('employees')"
+      :title="$t('employees.title')"
       value="employees"
       class="text-3xl"
+      href="/employees"
     />
 
     <v-list-item

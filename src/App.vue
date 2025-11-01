@@ -24,7 +24,7 @@ import Sidebar from '@/components/Sidebar.vue'
   components: { Sidebar: Sidebar }
 })
 class App extends Vue {
-  mounted() {
+  mounted () {
   }
 }
 let component = App;

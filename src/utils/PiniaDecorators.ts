@@ -7,7 +7,7 @@ type StateKeys<TStore extends Store> = {
 }[keyof TStore]
 
 /** Utility to resolve property name */
-function resolvePropName(
+function resolvePropName (
   target: object,
   propertyKey: string | symbol,
   name?: string | number | symbol
@@ -18,17 +18,17 @@ function resolvePropName(
 /**
  * Binds a property to a Pinia store state field
  */
-export function State<TStore extends Store, K extends StateKeys<TStore>>(
+export function State<TStore extends Store, K extends StateKeys<TStore>> (
   storeFactory: StoreFactory<TStore>,
   stateName?: K
 ) {
   return (target: object, propertyKey: string | symbol) => {
     const propName = resolvePropName(target, propertyKey, stateName)
     Object.defineProperty(target, propertyKey, {
-      get() {
+      get () {
         return storeFactory()[propName as K]
       },
-      set(value: TStore[K]) {
+      set (value: TStore[K]) {
         storeFactory()[propName as K] = value
       },
       enumerable: true,
@@ -40,14 +40,14 @@ export function State<TStore extends Store, K extends StateKeys<TStore>>(
 /**
  * Binds a property to a Pinia store getter
  */
-export function Getter<TStore extends Store, K extends keyof TStore>(
+export function Getter<TStore extends Store, K extends keyof TStore> (
   storeFactory: StoreFactory<TStore>,
   getterName?: K
 ) {
   return (target: object, propertyKey: string | symbol) => {
     const propName = resolvePropName(target, propertyKey, getterName)
     Object.defineProperty(target, propertyKey, {
-      get() {
+      get () {
         return storeFactory()[propName as K]
       },
       enumerable: true,
@@ -59,14 +59,14 @@ export function Getter<TStore extends Store, K extends keyof TStore>(
 /**
  * Binds a property to a Pinia store action (and automatically binds its context)
  */
-export function Action<TStore extends Store, K extends keyof TStore>(
+export function Action<TStore extends Store, K extends keyof TStore> (
   storeFactory: StoreFactory<TStore>,
   actionName?: K
 ) {
   return (target: object, propertyKey: string | symbol) => {
     const propName = resolvePropName(target, propertyKey, actionName)
     Object.defineProperty(target, propertyKey, {
-      get() {
+      get () {
         const store = storeFactory()
         const fn = store[propName]
         return typeof fn === "function" ? fn.bind(store) : fn

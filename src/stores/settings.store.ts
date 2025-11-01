@@ -3,10 +3,12 @@ import type { AppSettings } from '@/types/AppSettings'
 
 export const useSettingsStore = defineStore('settings', {
   state: (): AppSettings => ({
-    companyName: null
+    companyName: '',
+    nipNumber: null,
+    address: null,
   }),
   actions: {
-    updateSettings(payload: Partial<AppSettings>) {
+    updateSettings (payload: AppSettings) {
       this.$patch(payload)
     },
   },

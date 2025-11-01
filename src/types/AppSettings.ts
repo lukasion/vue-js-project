@@ -1,3 +1,5 @@
 export interface AppSettings {
-    companyName: string | null;
+    companyName: string;
+    nipNumber: string | null;
+    address: string | null;
 }

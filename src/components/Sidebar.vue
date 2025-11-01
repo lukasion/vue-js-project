@@ -13,8 +13,9 @@
       >
         <v-list-item
           prepend-icon="mdi-cog-outline"
-          :title="$t('settings')"
+          :title="$t('settings.title')"
           value="settings"
+          href="/settings"
         />
       </v-list>
     </template>
@@ -23,8 +24,6 @@
 
 <script lang="ts">
 import { Vue, Component, toNative } from 'vue-facing-decorator'
-import { State } from "@/utils/PiniaDecorators"
-import { useSettingsStore } from "@/stores/settings.store"
 import NavigationAvatar from "@/components/NavigationAvatar.vue"
 import NavigationList from "@/components/NavigationList.vue"
 
@@ -33,11 +32,9 @@ import NavigationList from "@/components/NavigationList.vue"
     NavigationAvatar, NavigationList
   }
 })
-export class Settings extends Vue {
-  @State(useSettingsStore)
-  companyName: string
+export class Sidebar extends Vue {
 }
-let component = Settings;
+let component = Sidebar;
 (function () { component = toNative(component) })()
 export default component
 </script>

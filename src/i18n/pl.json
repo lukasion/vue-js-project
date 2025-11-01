@@ -1,8 +1,25 @@
 {
   "hello": "Witaj",
   "guest": "Gość",
-  "employees": "Pracownicy",
   "delegations": "Delegacje",
   "vehicles": "Pojazdy",
-  "settings": "Ustawienia"
+  "settings": {
+    "title": "Ustawienia",
+    "company": "Nazwa firmy",
+    "nipNumber": "NIP",
+    "address": "Adres",
+    "info": "Pierwszy krok!",
+    "info2": "Program delegacje służy do zarządzania delegacjami pracowników w Twojej firmie. Tutaj możesz zmienić ustawienia swojej firmy, takie jak nazwa, NIP i adres."
+  },
+  "employees": {
+    "title": "Pracownicy",
+    "info": "Zarządzaj swoimi pracownikami tutaj. Możesz dodawać, edytować i usuwać pracowników oraz przeglądać ich szczegóły."
+  },
+  "common": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "confirm": "Potwierdź"
+  }
 }

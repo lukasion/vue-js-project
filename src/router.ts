@@ -1,11 +1,14 @@
 import Settings from "@/pages/Settings.vue"
-import { createMemoryHistory, createRouter } from 'vue-router'
+import Employees from "@/pages/Employees.vue"
+import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
   { path: '/', component: Settings },
+  { path: '/settings', component: Settings },
+  { path: '/employees', component: Employees },
 ]
 
 export const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })

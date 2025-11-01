@@ -44,6 +44,7 @@ export default defineConfig(
             semi: ['error', 'never'],
             'no-extra-semi': 'error',
             'no-unexpected-multiline': 'error',
+            'space-before-function-paren': ['error', 'always'],
             indent: [
                 'error',
                 2,
