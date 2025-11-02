@@ -98,6 +98,7 @@ import { State } from '@/utils/PiniaDecorators'
 class Employees extends Vue {
   @State(useEmployeesStore, 'employees') 
   employees!: Employees[]
+  // test
 }
 let component = Employees;
 (function () { component = toNative(component) })()
