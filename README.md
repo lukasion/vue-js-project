@@ -1,5 +1,7 @@
 # "Delegations" Application — Employee Delegation Management
 
+[![CI](https://github.com/lukasion/vue-js-project/actions/workflows/main.yml/badge.svg)](https://github.com/lukasion/vue-js-project/actions/workflows/main.yml)
+
 ## Short Description
 This application is designed for managing employee delegations in small and medium-sized businesses. It allows you to store data on delegations, expenses, mileage, and company settings.
 
